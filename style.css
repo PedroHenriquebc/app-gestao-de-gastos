@@ -29,6 +29,11 @@ form {
     color: black;
 }
 
+.imagem-login {
+    width: 35vw;
+    padding-right: 50px;
+}
+
 button {
     cursor: pointer;
 }
