@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    padding: 25px 25px;
+    margin-top: 50px;
+    border: 3px solid black;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.titulo-login {
+    text-align: center;
+    font-family: monospace;
+    margin-bottom: 50px;
+}
+
+.botao-entrar {
+    margin-top: 25px;
+    background-color: black;
+    color: white;
+}
+
+.botao-limpar {
+    background-color: white;
+    color: black;
+}
+
+button {
+    cursor: pointer;
+}
+
+input, button {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: -webkit-fill-available;
+}
