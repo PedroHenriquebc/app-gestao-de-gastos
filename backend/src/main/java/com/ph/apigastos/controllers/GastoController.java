@@ -58,7 +58,7 @@ public class GastoController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Gasto não registrado.");
         } else {
             var updatedGasto= gastoRepository.findById(id).get();
-            BeanUtils.copyProperties(oldGasto, updatedGasto);
+            BeanUtils.copyProperties(oldGasto, updatedGasto, "id");
             return ResponseEntity.status(HttpStatus.OK).body(gastoRepository.save(updatedGasto));
         }
     }

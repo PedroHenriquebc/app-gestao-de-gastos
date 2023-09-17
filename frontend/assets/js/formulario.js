@@ -1,23 +1,12 @@
-function realizarLogin() {
-    const login = document.getElementById("login").value;
-    const senha = document.getElementById("senha").value;
-
-    if (login == "admin" && senha == "admin") {
-        alert("Login realizado com sucesso!");
-        location.href = "./assets/html/home.html";
-    } else {
-        alert("Email e/ou senha inválidos!");
-    }
-}
-
 const formulario = document.querySelector("#form");
 const valorGasto = document.querySelector("#valor");
 const dataGasto = document.querySelector("#data");
 const categoriaGasto = document.querySelector("#categoria");
 const descricaoGasto = document.querySelector("#descricao");
 
-function registrar() {
-    fetch("http://localhost:8080/gasto",
+// let excluir = async (id) => {
+let registrar = async() => {
+    await fetch("http://localhost:8080/gasto",
     {
             method: "POST",
             headers: {
@@ -30,10 +19,12 @@ function registrar() {
                 categoria: categoriaGasto.value,
                 descricao: descricaoGasto.value
             })
-    })
+    });
 }
 
 formulario.addEventListener("submit", function(event){
     event.preventDefault();
     registrar();
+    alert("Gasto registrado com sucesso!");
+    location.reload();
 });

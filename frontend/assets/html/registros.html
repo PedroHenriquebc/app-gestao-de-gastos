@@ -1,11 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script type="text/javascript" src="/assets/js/tabela.js" defer></script>
+    <title>Registros</title>
 </head>
+
 <body>
+    <div>
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th colspan="6" class="titulo">Listagem dos registros de gastos</th>
+                </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Valor(R$)</th>
+                    <th>Data</th>
+                    <th>Categoria</th>
+                    <th>Descrição</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <button type="button" class="botao-alternativo" onclick="location.href = 'home.html';">Voltar</button>
     
+        <form class="borda-principal" id="form-modificacao">
+            <h1 class="titulo">Modificar registro de gasto</h1>
+            
+            <div>
+                <label>Valor</label> <br>
+                <input type="number" id="valor" placeholder="R$">
+            </div>
+            <div>
+                <label>Data</label> <br>
+                <input type="date" id="data">
+            </div>
+            <div>
+                <label>Categoria</label> <br>
+                    <select id="categoria">
+                        <option value="alimentação">Alimentação</option>
+                        <option value="saúde">Saúde</option>
+                        <option value="lazer">Lazer</option>
+                        <option value="educação">Educação</option>
+                        <option value="outros">Outros</option>
+                    </select>
+            </div>
+            <div>
+                <label>Descrição</label> <br>
+                <input type="text" id="descricao" placeholder="Descrição do registro">
+            </div>
+            <div>
+                <button id="botao-modificar" class="botao-padrao">Modificar</button> <br>
+                <button type="reset" class="botao-alternativo">Limpar</button>
+            </div>
+        </form>
+    </div>
 </body>
+
 </html>
