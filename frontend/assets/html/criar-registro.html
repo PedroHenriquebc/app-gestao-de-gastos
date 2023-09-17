@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script type="text/javascript" src="/assets/js/script.js" defer></script>
+    <title>Criação de registro de gasto</title>
+</head>
+<body>
+    <form class="borda-principal" id="form">
+        <h1 class="titulo">Registrar gasto</h1>
+        
+        <div>
+            <label>Valor</label> <br>
+            <input type="number" id="valor" placeholder="R$">
+        </div>
+        <div>
+            <label>Data</label> <br>
+            <input type="date" id="data">
+        </div>
+        <div>
+            <label>Categoria</label> <br>
+                <select id="categoria">
+                    <option value="alimentação">Alimentação</option>
+                    <option value="saúde">Saúde</option>
+                    <option value="lazer">Lazer</option>
+                    <option value="educação">Educação</option>
+                    <option value="outros">Outros</option>
+                </select>
+        </div>
+        <div>
+            <label>Descrição</label> <br>
+            <input type="text" id="descricao" placeholder="Descrição do registro">
+        </div>
+        <div>
+            <button type="submit" class="botao-padrao">Registrar</button> <br>
+            <button type="reset" class="botao-alternativo">Limpar</button>
+            <button type="button" class="botao-alternativo" onclick="location.href = 'home.html';">Voltar</button>
+        </div>
+    </form>
+</body>
+</html>

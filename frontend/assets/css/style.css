@@ -4,7 +4,7 @@ body {
     justify-content: center;
 }
 
-form {
+.borda-principal {
     padding: 25px 25px;
     margin-top: 50px;
     border: 3px solid black;
@@ -12,19 +12,19 @@ form {
     width: 300px;
 }
 
-.titulo-login {
+.titulo {
     text-align: center;
     font-family: monospace;
     margin-bottom: 50px;
 }
 
-.botao-entrar {
+.botao-padrao {
     margin-top: 25px;
     background-color: black;
     color: white;
 }
 
-.botao-limpar {
+.botao-alternativo {
     background-color: white;
     color: black;
 }
@@ -38,7 +38,7 @@ button {
     cursor: pointer;
 }
 
-input, button {
+input, button, select {
     padding: 10px;
     margin-bottom: 10px;
     width: -webkit-fill-available;
