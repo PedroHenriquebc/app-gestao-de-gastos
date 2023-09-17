@@ -1,3 +1,6 @@
+/* 
+    POST
+*/
 const formulario = document.querySelector("#form");
 const valorGasto = document.querySelector("#valor");
 const dataGasto = document.querySelector("#data");

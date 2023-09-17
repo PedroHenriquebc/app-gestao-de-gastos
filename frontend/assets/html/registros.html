@@ -18,10 +18,10 @@
                     <th colspan="6" class="titulo">Listagem dos registros de gastos</th>
                 </tr>
                 <tr>
-                    <th>#</th>
-                    <th>Valor(R$)</th>
+                    <th><a href="javascript:;" onclick="listar();">ID</a></th>
+                    <th><a href="javascript:;" onclick="listarByValor();">Valor(R$)</a></th>
                     <th>Data</th>
-                    <th>Categoria</th>
+                    <th><a href="javascript:;" onclick="listarByCategoria();">Categoria</a></th>
                     <th>Descrição</th>
                     <th></th>
                 </tr>
@@ -30,7 +30,7 @@
             </tbody>
         </table>
         <button type="button" class="botao-alternativo" onclick="location.href = 'home.html';">Voltar</button>
-    
+
         <form class="borda-principal" id="form-modificacao">
             <h1 class="titulo">Modificar registro de gasto</h1>
             

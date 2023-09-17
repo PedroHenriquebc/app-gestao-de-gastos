@@ -4,6 +4,7 @@ import com.ph.apigastos.models.GastoModel;
 import com.ph.apigastos.repositories.GastoRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,17 @@ public class GastoController {
     @GetMapping("/gasto")
     public ResponseEntity<List> findAll() {
         List<GastoModel> gastoList = gastoRepository.findAll();
+        return ResponseEntity.status(HttpStatus.OK).body(gastoList);
+    }
+    @GetMapping("/gasto/valor")
+    public ResponseEntity<List> findAllGastosValor() {
+        List<GastoModel> gastoList = gastoRepository.findAllByOrderByValorDesc();
+        return ResponseEntity.status(HttpStatus.OK).body(gastoList);
+    }
+
+    @GetMapping("/gasto/categoria")
+    public ResponseEntity<List> findAllGastosCategoria() {
+        List<GastoModel> gastoList = gastoRepository.findAllByOrderByCategoria();
         return ResponseEntity.status(HttpStatus.OK).body(gastoList);
     }
 

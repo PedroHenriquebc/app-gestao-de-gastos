@@ -1,3 +1,6 @@
+/* 
+    GETS
+*/
 window.onload = function () {
     listar();
 }
@@ -34,6 +37,74 @@ let listar = async () => {
     document.querySelector("#tabela tbody").outerHTML = conteudoTabela;
 }
 
+let listarByCategoria = async () => {
+    const requisicao = await fetch("http://localhost:8080/gasto/categoria",
+        {
+            method: "GET",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+        });
+
+
+    const listaGastos = await requisicao.json();
+
+    let conteudoTabela = "";
+    for (let gasto of listaGastos) {
+        let conteudoFila = `<tr>
+    <td>${gasto.id}</td>
+    <td>${gasto.valor}</td>
+    <td>${gasto.data.substring(0, 10)}</td>
+    <td>${gasto.categoria}</td>
+    <td>${gasto.descricao}</td>
+    <td>
+        <i onclick="preencherFormulario(${gasto.id})"; class="material-icons botao-edit-del editar">edit</i>
+        <i onclick="excluir(${gasto.id})" class="material-icons botao-edit-del deletar">delete</i>
+    </td>`
+
+        conteudoTabela += conteudoFila;
+    }
+
+    document.querySelector("#tabela tbody").outerHTML = conteudoTabela;
+}
+
+let listarByValor = async () => {
+    const requisicao = await fetch("http://localhost:8080/gasto/valor",
+        {
+            method: "GET",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+        });
+
+
+    const listaGastos = await requisicao.json();
+
+    let conteudoTabela = "";
+    for (let gasto of listaGastos) {
+        let conteudoFila = `<tr>
+    <td>${gasto.id}</td>
+    <td>${gasto.valor}</td>
+    <td>${gasto.data.substring(0, 10)}</td>
+    <td>${gasto.categoria}</td>
+    <td>${gasto.descricao}</td>
+    <td>
+        <i onclick="preencherFormulario(${gasto.id})"; class="material-icons botao-edit-del editar">edit</i>
+        <i onclick="excluir(${gasto.id})" class="material-icons botao-edit-del deletar">delete</i>
+    </td>`
+
+        conteudoTabela += conteudoFila;
+    }
+
+    document.querySelector("#tabela tbody").outerHTML = conteudoTabela;
+}
+
+/* 
+    DELETE
+*/
+
 let excluir = async (id) => {
     await fetch("http://localhost:8080/gasto/" + id,
         {
@@ -48,6 +119,9 @@ let excluir = async (id) => {
     location.reload();
 }
 
+/* 
+   PUT
+*/
 
 function mostrarFormulario() {
     document.getElementById("form-modificacao").style.visibility = "visible";
@@ -104,4 +178,3 @@ let editar = async (id) => {
         });
 
 }
-
