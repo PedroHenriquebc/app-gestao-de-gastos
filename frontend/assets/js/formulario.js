@@ -4,7 +4,6 @@ const dataGasto = document.querySelector("#data");
 const categoriaGasto = document.querySelector("#categoria");
 const descricaoGasto = document.querySelector("#descricao");
 
-// let excluir = async (id) => {
 let registrar = async() => {
     await fetch("http://localhost:8080/gasto",
     {
@@ -22,8 +21,8 @@ let registrar = async() => {
     });
 }
 
-formulario.addEventListener("submit", function(event){
-    event.preventDefault();
+let btnModificar = document.getElementById("botao-registrar");
+btnModificar.addEventListener("click", evento => {
     registrar();
     alert("Gasto registrado com sucesso!");
     location.reload();

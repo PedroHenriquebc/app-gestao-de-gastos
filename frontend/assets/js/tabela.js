@@ -78,7 +78,7 @@ let preencherFormulario = async (id) => {
 let btnModificar = document.getElementById("botao-modificar");
 btnModificar.addEventListener("click", evento => {
     editar(idEditar);
-    alert("Gasto registrado com sucesso!");
+    alert("Registro de gasto atualizado com sucesso!");
     location.reload();
 });
 
